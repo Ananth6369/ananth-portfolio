@@ -8,13 +8,15 @@ interface ZeroGCardProps {
   className?: string;
   delay?: number;
   interactive?: boolean;
+  style?: React.CSSProperties;
 }
 
 export default function ZeroGCard({ 
   children, 
   className = "", 
   delay = 0,
-  interactive = true 
+  interactive = true,
+  style = {}
 }: ZeroGCardProps) {
   return (
     <motion.div
@@ -31,6 +33,7 @@ export default function ZeroGCard({
         scale: 1.01,
         transition: { duration: 0.3, ease: "easeOut" }
       } : {}}
+      style={style}
       className={`glass-panel rounded-[2rem] relative overflow-hidden group transition-shadow hover:shadow-[0_20px_50px_rgba(0,255,209,0.1)] ${className}`}
     >
       {/* Subtle internal glow */}

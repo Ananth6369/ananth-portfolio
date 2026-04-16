@@ -8,22 +8,15 @@ export interface Project {
   title: string;
   tagline: string;
   category: string;
-  categoryColor: string;
+  categoryColor?: string;
   icon: string;
   tags: string[];
   problem: string;
   approach: string;
   tools: string[];
   results: string[];
-  type: string;
-  stack: string[];
-  shortDescription: string;
-  fullDescription: string;
-  github: string;
-  live: string;
-  image: string;
-  color: string;
-  metrics: { label: string; value: string }[];
+  gradient: string;
+  glowColor: string;
 }
 
 export const projects: Project[] = [

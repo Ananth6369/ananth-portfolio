@@ -3,16 +3,25 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
+export interface Tab {
+  title: string;
+  content: string;
+}
+
 export interface JourneyStage {
   id: number;
   year: string;
   title: string;
   subtitle: string;
+  company: string;
+  period: string;
+  domains: string;
   description: string;
   icon: string;
   color: string;
   glowColor: string;
   skills: string[];
+  tabs?: Tab[];
 }
 
 interface TimelineNodeProps {
