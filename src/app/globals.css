@@ -1,54 +1,73 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-primary: #5271ff;
-  --color-secondary: #9d4edd;
+  --background: #0f172a; /* Slate 900 - Slightly dark, not pitch black */
+  --foreground: #f8fafc; /* Slate 50 */
+  --accent: #00d4ff;     /* Cyan accent */
+  --accent-muted: rgba(0, 212, 255, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-primary: var(--color-primary);
-  --color-secondary: var(--color-secondary);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-typewriter: typewriter 2s steps(40) infinite alternate;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-slide-up: slide-up 0.5s ease-out forwards;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #030305;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-foreground selection:bg-accent selection:text-background;
+    font-variant-ligatures: normal;
   }
-}
 
-/* Force dark theme for the portfolio since it's a "dark futuristic background" */
-:root {
-  --background: #030305;
-  --foreground: #e0e0e0;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
 }
 
 @layer utilities {
-  .glass-panel {
-    background: rgba(20, 20, 25, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  .glass-card {
+    background: rgba(30, 41, 59, 0.7); /* Lighter dark for glass effect */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
-  .text-glow-primary {
-    text-shadow: 0 0 10px rgba(82, 113, 255, 0.6), 0 0 25px rgba(82, 113, 255, 0.4);
+  .text-gradient-accent {
+    background: linear-gradient(to right, #00d4ff, #0088ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .text-glow-secondary {
-    text-shadow: 0 0 10px rgba(157, 78, 221, 0.6), 0 0 25px rgba(157, 78, 221, 0.4);
+  .border-accent-glow {
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
   }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
 }

@@ -15,163 +15,56 @@ export interface Project {
   approach: string;
   tools: string[];
   results: string[];
-  gradient: string;
-  glowColor: string;
+  type: string;
+  stack: string[];
+  shortDescription: string;
+  fullDescription: string;
+  github: string;
+  live: string;
+  image: string;
+  color: string;
+  metrics: { label: string; value: string }[];
 }
 
 export const projects: Project[] = [
   {
-    id: "ai-test-prioritization",
-    title: "AI Test Case Prioritization",
-    tagline: "ML-powered intelligent test selection",
-    category: "AI / QA",
-    categoryColor: "#22d3ee",
-    icon: "🤖",
-    tags: ["Python", "ML", "OpenAI", "Automation"],
-    problem: "Thousands of test cases, limited CI/CD time — which tests matter most before a release? Running all tests was slow; skipping them was risky.",
-    approach: "Built a machine learning model trained on historical defect data, test coverage, and code change patterns to rank and select the highest-risk test cases per deployment.",
-    tools: ["Python", "Scikit-learn", "OpenAI API", "GitHub Actions", "Pandas", "Pytest"],
-    results: [
-      "Reduced regression suite runtime by 62%",
-      "Detected 94% of critical defects with top-30% of tests",
-      "Integrated into CI pipeline with zero manual steps",
-    ],
-    gradient: "linear-gradient(135deg, #0d1117 0%, #0c1a2e 100%)",
-    glowColor: "#22d3ee",
-  },
-  {
-    id: "cococraft-testing",
-    title: "CocoCraft Testing",
-    tagline: "End-to-end QA for an e-commerce platform",
-    category: "E-Commerce / QA",
-    categoryColor: "#a78bfa",
-    icon: "🛒",
-    tags: ["Selenium", "TestNG", "JIRA", "BDD"],
-    problem: "CocoCraft's web platform had complex checkout flows, dynamic pricing, and multi-currency support — all requiring thorough validation before each release.",
-    approach: "Designed a modular test framework using Selenium WebDriver with a Page Object Model, BDD specs via Cucumber, and a data-driven approach for multi-scenario checkout coverage.",
-    tools: ["Selenium WebDriver", "Java", "TestNG", "Cucumber", "JIRA", "Maven"],
-    results: [
-      "Achieved 87% automation coverage across checkout flows",
-      "Cut release cycle testing time from 3 days to 6 hours",
-      "Zero critical payment defects in production post-launch",
-    ],
-    gradient: "linear-gradient(135deg, #0d0d1e 0%, #150d2e 100%)",
-    glowColor: "#a78bfa",
-  },
-  {
-    id: "admin-panel-automation",
-    title: "Admin Panel Automation",
-    tagline: "Full regression suite for internal SaaS dashboard",
+    id: "alatron-automation",
+    title: "Alatron Vendor Automation",
+    tagline: "End-to-end framework for industrial procurement",
     category: "Automation",
-    categoryColor: "#818cf8",
-    icon: "⚙️",
-    tags: ["Playwright", "TypeScript", "CI/CD", "Allure"],
-    problem: "A large SaaS admin panel with 200+ features and frequent deployments had no automated regression coverage, leading to frequent production regressions.",
-    approach: "Built a Playwright-based test suite in TypeScript, structured around feature modules. Integrated Allure reports and parallelized execution across Chrome, Firefox, and Safari.",
-    tools: ["Playwright", "TypeScript", "Allure Report", "GitHub Actions", "Docker"],
+    categoryColor: "#00FFD1",
+    icon: "🏭",
+    tags: ["Selenium", "Java", "TestNG", "Maven"],
+    problem: "Alatron's vendor ecosystem required exhaustive manual regression across procurement, onboarding, and logistics flows, leading to slow release cycles.",
+    approach: "Architected a modular Page Object Model (POM) framework in Java. Automated 150+ critical paths including vendor registration, order bidding, and invoice processing.",
+    tools: ["Selenium WebDriver", "Java", "TestNG", "Maven", "GitHub Actions", "Extent Reports"],
     results: [
-      "Created 400+ automated test cases covering all critical user flows",
-      "Reduced regression time from 2 days to under 1 hour",
-      "Achieved cross-browser coverage across 3 major browsers",
+      "Achieved 85% automation coverage across the vendor portal",
+      "Reduced regression suite execution time by 60%",
+      "Identified 30+ high-severity bugs before production deployment"
     ],
-    gradient: "linear-gradient(135deg, #0a0a1a 0%, #0f1228 100%)",
-    glowColor: "#818cf8",
+    gradient: "linear-gradient(135deg, #051a1a 0%, #0a2525 100%)",
+    glowColor: "#00FFD1",
   },
   {
-    id: "banner-validation",
-    title: "Banner Validation System",
-    tagline: "Automated visual regression for campaign banners",
-    category: "Visual Testing",
-    categoryColor: "#f472b6",
-    icon: "🖼️",
-    tags: ["Playwright", "Percy", "Node.js", "Chromatic"],
-    problem: "Marketing campaign banners needed pixel-perfect validation across 30+ device sizes and 12 locales. Manual checking was error-prone and took days.",
-    approach: "Built a visual regression pipeline using Playwright + Percy to capture and diff banners at defined breakpoints. Automated locale-specific content injection and screenshot comparison.",
-    tools: ["Playwright", "Percy", "Node.js", "Chromatic", "GitHub Actions"],
+    id: "poppy-admin-qa",
+    title: "Poppy Admin CRM Suite",
+    tagline: "Regression automation for pest control CRM",
+    category: "Automation",
+    categoryColor: "#3B8BFF",
+    icon: "🤝",
+    tags: ["Selenium", "Java", "TestNG", "Postman"],
+    problem: "The Poppy Admin panel managed critical customer data and scheduling. Manual regression for frequent UI updates was bottlenecking the development team.",
+    approach: "Developed a comprehensive regression suite using Selenium and TestNG. Focused on dynamic table data validation and user permission security checks.",
+    tools: ["Selenium WebDriver", "Java", "TestNG", "Postman", "Jenkins", "Apache POI"],
     results: [
-      "Reduced banner QA turnaround from 3 days to 2 hours",
-      "Caught 47 visual regressions in first 3 weeks of deployment",
-      "Supported 30+ device viewports and 12 locale variants",
+      "Automated over 200 regression scenarios with 98% reliability",
+      "Achieved 100% traceability between test cases and defects",
+      "Ensured zero critical regressions across 12 consecutive production launches"
     ],
-    gradient: "linear-gradient(135deg, #170010 0%, #2a0020 100%)",
-    glowColor: "#f472b6",
-  },
-  {
-    id: "jmeter-performance",
-    title: "JMeter Performance Testing",
-    tagline: "Load & stress testing for high-traffic APIs",
-    category: "Performance",
-    categoryColor: "#fb7185",
-    icon: "⚡",
-    tags: ["JMeter", "Grafana", "InfluxDB", "k6"],
-    problem: "A public-facing API serving 500K+ daily users had no performance baseline. The engineering team had no visibility into throughput limits, error rates under load, or slow endpoints.",
-    approach: "Designed JMeter test plans simulating real-world traffic patterns. Set up a real-time Grafana dashboard backed by InfluxDB, and automated load tests within the CI pipeline.",
-    tools: ["Apache JMeter", "Grafana", "InfluxDB", "k6", "Jenkins", "AWS EC2"],
-    results: [
-      "Identified 3 critical bottlenecks causing 8s+ response times at 500 VUs",
-      "Improved P95 response time by 72% after optimizations",
-      "Established SLA baselines for 1K, 5K, and 10K concurrent users",
-    ],
-    gradient: "linear-gradient(135deg, #1a0505 0%, #2a0808 100%)",
-    glowColor: "#fb7185",
-  },
-  {
-    id: "erp-system-design",
-    title: "ERP System Design",
-    tagline: "UX architecture for enterprise resource planning",
-    category: "UX / Design",
-    categoryColor: "#34d399",
-    icon: "🏗️",
-    tags: ["Figma", "UX Research", "System Design", "Wireframing"],
-    problem: "A manufacturing company's legacy ERP was causing 40% of users to make data entry errors due to poor UX. Navigation was complex and workflows were non-intuitive.",
-    approach: "Conducted stakeholder interviews and usability audits. Redesigned the IA and navigation with role-based dashboards. Created a full Figma design system covering 60+ components.",
-    tools: ["Figma", "FigJam", "Storybook", "Hotjar", "Maze", "Notion"],
-    results: [
-      "Reduced average task completion time by 38%",
-      "Data entry errors dropped by 51% in pilot testing",
-      "Delivered 60+ component design system used by 4 dev teams",
-    ],
-    gradient: "linear-gradient(135deg, #021a10 0%, #052e1a 100%)",
-    glowColor: "#34d399",
-  },
-  {
-    id: "crm-documentation",
-    title: "CRM Documentation Suite",
-    tagline: "Comprehensive technical documentation for CRM platform",
-    category: "Documentation",
-    categoryColor: "#fbbf24",
-    icon: "📚",
-    tags: ["Confluence", "Notion", "API Docs", "Swagger"],
-    problem: "A custom CRM platform had zero developer documentation. Onboarding new engineers took 3+ weeks, and support tickets were flooded with queries that docs could have answered.",
-    approach: "Audited all features, interviewed developers and support teams, then built a structured documentation suite including API references, usage guides, onboarding flows, and a changelog system.",
-    tools: ["Confluence", "Swagger/OpenAPI", "Notion", "Markdown", "DrawIO"],
-    results: [
-      "Reduced developer onboarding time from 3 weeks to 4 days",
-      "Support ticket volume dropped by 43% within 2 months",
-      "Created 120+ documentation pages covering all platform features",
-    ],
-    gradient: "linear-gradient(135deg, #1a1200 0%, #2e1f00 100%)",
-    glowColor: "#fbbf24",
-  },
-  {
-    id: "nfc-app-concept",
-    title: "NFC App Concept",
-    tagline: "Tap-to-connect digital identity experience",
-    category: "Innovation",
-    categoryColor: "#f97316",
-    icon: "📱",
-    tags: ["NFC", "React Native", "UX", "Prototype"],
-    problem: "Physical business cards are wasteful and outdated. Existing digital alternatives like QR codes create friction. A designer envisioned a seamless tap-to-connect experience.",
-    approach: "Designed and prototyped a React Native app concept leveraging NFC tags. Users tap their phone on a card to instantly receive a contact digital profile with portfolio, socials, and a call-to-action.",
-    tools: ["React Native", "Figma", "NFC APIs", "Firebase", "Expo"],
-    results: [
-      "Designed 28-screen interactive prototype in Figma",
-      "Built working NFC proof-of-concept with React Native + Expo",
-      "Concept validated with 15 users — 93% preferred over QR codes",
-    ],
-    gradient: "linear-gradient(135deg, #1a0800 0%, #2e1200 100%)",
-    glowColor: "#f97316",
-  },
+    gradient: "linear-gradient(135deg, #050a1a 0%, #0a152e 100%)",
+    glowColor: "#3B8BFF",
+  }
 ];
 
 // ---- ProjectCard ----

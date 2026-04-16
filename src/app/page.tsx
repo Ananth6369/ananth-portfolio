@@ -1,51 +1,54 @@
-import Hero from "@/components/hero/Hero";
-import JourneySection from "@/components/journey/JourneySection";
-import SkillsSection from "@/components/skills/SkillsSection";
-import ProjectsSection from "@/components/projects/ProjectsSection";
-import MindsetEngine from "@/components/mindset/MindsetEngine";
-import KnowledgeVault from "@/components/knowledge/KnowledgeVault";
-import AutomationDemo from "@/components/simulation/AutomationDemo";
-import ContactSection from "@/components/contact/ContactSection";
+"use client";
+
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Certifications from "@/components/Certifications";
+import Education from "@/components/Education";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-[#030305] min-h-screen text-white">
-      <Hero />
+    <main className="relative min-h-screen">
+      <Navbar />
+      
+      <section id="home">
+        <Hero />
+      </section>
 
-      {/* Journey section */}
-      <div className="relative z-10 -mt-10 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_80px_rgba(0,0,0,0.9)] border-t border-white/5">
-        <JourneySection />
-      </div>
+      <section id="about" className="py-20">
+        <About />
+      </section>
 
-      {/* Skills Universe section */}
-      <div className="relative z-10 border-t border-white/5">
-        <SkillsSection />
-      </div>
+      <section id="skills" className="py-20 bg-slate-900/50">
+        <Skills />
+      </section>
 
-      {/* Projects Universe section */}
-      <div className="relative z-10 border-t border-white/5">
-        <ProjectsSection />
-      </div>
+      <section id="experience" className="py-20">
+        <Experience />
+      </section>
 
-      {/* Testing Mindset Engine section */}
-      <div className="relative z-10 border-t border-white/5">
-        <MindsetEngine />
-      </div>
+      <section id="projects" className="py-20 bg-slate-900/50">
+        <Projects />
+      </section>
 
-      {/* Live Automation Demo section */}
-      <div className="relative z-10 border-t border-white/5">
-        <AutomationDemo />
-      </div>
+      <section id="certifications" className="py-20">
+        <Certifications />
+      </section>
 
-      {/* Knowledge Vault section */}
-      <div className="relative z-10 border-t border-white/5">
-        <KnowledgeVault />
-      </div>
+      <section id="education" className="py-20 bg-slate-900/50">
+        <Education />
+      </section>
 
-      {/* Contact section */}
-      <div className="relative z-10 border-t border-white/5">
-        <ContactSection />
-      </div>
+      <section id="contact" className="py-20">
+        <Contact />
+      </section>
+
+      <Footer />
     </main>
   );
 }
