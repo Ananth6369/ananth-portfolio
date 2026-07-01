@@ -45,7 +45,7 @@ export default function Experience() {
             </div>
             <div className="space-y-2">
               <span className="flex items-center gap-2 text-slate-400 bg-slate-800/50 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-700/50">
-                <Calendar size={16} /> Apr 2025 – Present
+                <Calendar size={16} /> Apr 2025 – Jun 2026
               </span>
               <span className="flex items-center gap-2 text-slate-400 bg-slate-800/50 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-700/50">
                 <MapPin size={16} /> Coimbatore, TN
