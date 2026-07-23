@@ -35,7 +35,7 @@ export default function AboutSection() {
         </motion.div>
 
         {/* Two-Panel Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center lg:items-stretch justify-center max-w-5xl mx-auto w-full">
           
           {/* Left Panel: Identity Card */}
           <motion.div 
@@ -46,23 +46,18 @@ export default function AboutSection() {
             className="w-full lg:w-[380px] shrink-0"
           >
             <ZeroGCard className="h-full p-8 flex flex-col items-center text-center">
-              {/* Avatar Space */}
-              <div className="relative mb-6">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#00FFD1]/50 p-1 relative z-10 bg-[#0A0A0F]">
-                  <Image
-                    src="/profile-headshot.png"
-                    alt="Ananth A - QA Engineer"
-                    width={128}
-                    height={128}
-                    className="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-                {/* Orbital rings around avatar */}
-                <motion.div 
-                  className="absolute inset-[-15px] rounded-full border border-[#00FFD1]/20 border-t-[#00FFD1] pointer-events-none"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              {/* Full Portrait Card */}
+              <div className="relative mb-6 w-full max-w-[280px] h-[340px] md:h-[380px] rounded-3xl overflow-hidden border-2 border-[#00FFD1]/40 p-1.5 z-10 bg-[#0A0A0F] shadow-[0_0_30px_rgba(0,255,209,0.15)] group">
+                <Image
+                  src="/profile-headshot.png"
+                  alt="Ananth A - QA Engineer"
+                  width={400}
+                  height={600}
+                  quality={95}
+                  className="w-full h-full rounded-2xl object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  priority
                 />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
 
               <h3 className="text-3xl font-black text-white mb-1 tracking-tight">Ananth A</h3>

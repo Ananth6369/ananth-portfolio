@@ -9,7 +9,7 @@ export default function Education() {
       degree: "MCA (Master of Computer Applications)",
       college: "SNS College of Technology",
       location: "Coimbatore, Tamil Nadu",
-      cgpa: "8.04",
+      cgpa: "8.17",
       period: "2023 - 2025",
     },
     {

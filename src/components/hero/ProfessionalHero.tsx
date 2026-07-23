@@ -121,12 +121,25 @@ export default function ProfessionalHero() {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="flex flex-wrap items-center justify-center gap-4 pt-4"
         >
-          <button className="px-8 py-4 bg-[#00FFD1] text-black font-black uppercase tracking-widest rounded-full hover:scale-105 transition-transform shadow-[0_0_30px_rgba(0,255,209,0.3)]">
+          <a
+            href="#projects"
+            className="px-8 py-4 bg-[#00FFD1] text-black font-black uppercase tracking-widest rounded-full hover:scale-105 transition-transform shadow-[0_0_30px_rgba(0,255,209,0.3)]"
+          >
             Explore Missions
-          </button>
-          <button className="px-8 py-4 bg-white/5 text-white font-bold uppercase tracking-widest rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+          </a>
+          <a
+            href="/resume.pdf"
+            download="Ananth_A_Resume.pdf"
+            className="px-8 py-4 bg-white/5 text-white font-bold uppercase tracking-widest rounded-full border border-white/10 hover:bg-white/10 transition-colors flex items-center gap-2"
+          >
+            <span>Download Resume</span>
+          </a>
+          <a
+            href="#contact"
+            className="px-8 py-4 bg-white/5 text-white font-bold uppercase tracking-widest rounded-full border border-white/10 hover:bg-white/10 transition-colors"
+          >
             Contact Base
-          </button>
+          </a>
         </motion.div>
       </div>
 

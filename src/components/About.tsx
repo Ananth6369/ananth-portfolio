@@ -24,23 +24,24 @@ export default function About() {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center max-w-5xl mx-auto">
         {/* Left: Avatar/Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative group mx-auto lg:mx-0"
+          className="relative group shrink-0 mx-auto lg:mx-0"
         >
-          <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-accent/20 p-4 transition-all duration-500 group-hover:border-accent">
-            <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden border-2 border-slate-700 relative">
+          <div className="w-full max-w-[300px] sm:max-w-[320px] h-[380px] sm:h-[420px] md:h-[450px] rounded-3xl border-4 border-accent/20 p-2 transition-all duration-500 group-hover:border-accent shadow-2xl relative mx-auto lg:mx-0">
+            <div className="w-full h-full rounded-2xl bg-slate-900 flex items-center justify-center overflow-hidden border-2 border-slate-700 relative">
               <Image
                 src="/profile-headshot.png"
                 alt="Ananth A - QA Engineer"
-                width={320}
-                height={320}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                width={400}
+                height={600}
+                quality={95}
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 priority
               />
               {/* Fallback pattern in case image is missing */}
@@ -64,6 +65,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="flex-1 max-w-2xl"
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-6 text-slate-100 flex items-center gap-3">
             Passionate about <span className="text-accent">Quality Assurance</span>
