@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { User, Code2, ShieldCheck, Zap } from "lucide-react";
 
@@ -34,14 +35,14 @@ export default function About() {
         >
           <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-accent/20 p-4 transition-all duration-500 group-hover:border-accent">
             <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden border-2 border-slate-700 relative">
-               <img 
-                src="/profile-headshot.png" 
-                alt="Ananth A" 
+              <Image
+                src="/profile-headshot.png"
+                alt="Ananth A - QA Engineer"
+                width={320}
+                height={320}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none';
-                }}
-               />
+                priority
+              />
               {/* Fallback pattern in case image is missing */}
               <div className="absolute inset-0 flex items-center justify-center -z-10 bg-slate-800">
                 <User size={120} className="text-slate-600 group-hover:text-accent transition-colors duration-500" />

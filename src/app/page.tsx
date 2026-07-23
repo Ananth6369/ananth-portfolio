@@ -1,21 +1,20 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import HomepageBlogs from "@/components/blogs/HomepageBlogs";
 import Certifications from "@/components/Certifications";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="relative min-h-screen">
       <Navbar />
-      
+
       <section id="home">
         <Hero />
       </section>
@@ -35,6 +34,9 @@ export default function Home() {
       <section id="projects" className="py-20 bg-slate-900/50">
         <Projects />
       </section>
+
+      {/* Latest Blogs Section - Server Rendered */}
+      <HomepageBlogs />
 
       <section id="certifications" className="py-20">
         <Certifications />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -65,7 +65,7 @@ export default function Navbar() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="text-2xl font-bold text-accent"
-          onClick={(e) => scrollToSection(e, "#home")}
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => scrollToSection(e, "#home")}
         >
           ANANTH A
         </motion.a>
@@ -80,7 +80,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               className="text-slate-300 hover:text-accent font-medium transition-colors"
-              onClick={(e) => scrollToSection(e, link.href)}
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => scrollToSection(e, link.href)}
             >
               {link.name}
             </motion.a>
@@ -112,7 +112,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
+                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => scrollToSection(e, link.href)}
                   className="text-slate-300 hover:text-accent text-lg font-medium py-2 transition-colors border-b border-white/5 last:border-0"
                 >
                   {link.name}

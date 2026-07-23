@@ -206,7 +206,7 @@ export default function AutomationDemo() {
 
             {/* Execution Dashboard / Console */}
             <div className="rounded-2xl border border-white/10 bg-black overflow-hidden h-28 p-4 font-mono text-xs">
-              <div className="text-zinc-500 mb-2">// Test Execution Reporter</div>
+              <div className="text-zinc-500 mb-2">{ "// Test Execution Reporter" }</div>
               <AnimatePresence>
                 {phase === "executing" && (
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

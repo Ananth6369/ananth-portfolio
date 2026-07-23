@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Code2, Network, Globe, MapPin, Briefcase } from "lucide-react";
 import ZeroGCard from "../ui/ZeroGCard";
@@ -48,11 +49,13 @@ export default function AboutSection() {
               {/* Avatar Space */}
               <div className="relative mb-6">
                 <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#00FFD1]/50 p-1 relative z-10 bg-[#0A0A0F]">
-                   <img 
-                    src="/profile-headshot.png" 
-                    alt="Ananth A" 
+                  <Image
+                    src="/profile-headshot.png"
+                    alt="Ananth A - QA Engineer"
+                    width={128}
+                    height={128}
                     className="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                   />
+                  />
                 </div>
                 {/* Orbital rings around avatar */}
                 <motion.div 
@@ -103,8 +106,8 @@ export default function AboutSection() {
             <ZeroGCard className="p-8 md:p-12 mb-8 border-l-4 border-l-[#00FFD1]">
               <h4 className="text-[#3B8BFF] font-mono text-xs uppercase tracking-widest mb-4">Transmission Incoming _</h4>
               <p className="text-zinc-300 text-lg leading-relaxed font-light">
-                "I'm a QA Engineer with 1 year of hands-on experience building test frameworks that scale. My toolkit spans <strong className="text-white font-medium">Selenium WebDriver (Java)</strong>, <strong className="text-white font-medium">TestNG</strong>, <strong className="text-white font-medium">Postman REST APIs</strong>, and <strong className="text-white font-medium">Apache JMeter</strong> — applied across real ERP, CRM, e-commerce, and mobile platforms at Shrewd Business Solutions, Coimbatore. 
-                <span className="text-white font-medium"> I believe testing isn't a phase — it's the engineering culture.</span> Currently sharpening REST Assured and SDET skills."
+                &quot;I&apos;m a QA Engineer with 1 year of hands-on experience building test frameworks that scale. My toolkit spans <strong className="text-white font-medium">Selenium WebDriver (Java)</strong>, <strong className="text-white font-medium">TestNG</strong>, <strong className="text-white font-medium">Postman REST APIs</strong>, and <strong className="text-white font-medium">Apache JMeter</strong> — applied across real ERP, CRM, e-commerce, and mobile platforms at Shrewd Business Solutions, Coimbatore. 
+                <span className="text-white font-medium"> I believe testing isn&apos;t a phase — it&apos;s the engineering culture.</span> Currently sharpening REST Assured and SDET skills.&quot;
               </p>
             </ZeroGCard>
           </motion.div>

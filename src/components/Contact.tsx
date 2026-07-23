@@ -59,7 +59,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-slate-400 mt-6 max-w-xl mx-auto"
         >
-          I'm always open to discussing new projects, creative ideas or 
+          I&apos;m always open to discussing new projects, creative ideas or 
           opportunities to be part of your vision.
         </motion.p>
       </div>

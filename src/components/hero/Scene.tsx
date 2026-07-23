@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Stars, Float, Html } from "@react-three/drei";
-import { useRef, useMemo, type ReactNode } from "react";
+import { useRef, useMemo, type ReactNode, type ComponentType } from "react";
 import * as THREE from "three";
 import {
   ShieldCheck,
@@ -13,7 +13,14 @@ import {
   CodeSquare,
 } from "lucide-react";
 
-const skills = [
+interface SkillItem {
+  name: string;
+  icon: ComponentType<{ size?: number; color?: string; className?: string }>;
+  color: string;
+  position: number[];
+}
+
+const skills: SkillItem[] = [
   { name: "Testing", icon: ShieldCheck, color: "#5271ff", position: [-4, 2, -2] },
   { name: "Automation", icon: Cpu, color: "#9d4edd", position: [4, 1.5, -3] },
   { name: "AI", icon: BrainCircuit, color: "#00f0ff", position: [-3, -2, -1] },
@@ -22,9 +29,20 @@ const skills = [
   { name: "Development", icon: CodeSquare, color: "#00ffaa", position: [5, 0, -1] },
 ];
 
-function FloatingElement({ skill, index }: { skill: any, index: number }) {
+function generateParticlePositions(count: number): Float32Array {
+  const arr = new Float32Array(count * 3);
+  for (let i = 0; i < count * 3; i++) {
+    arr[i] = (Math.random() - 0.5) * 30;
+  }
+  return arr;
+}
+
+const PARTICLE_COUNT = 300;
+const PARTICLE_POSITIONS = generateParticlePositions(PARTICLE_COUNT);
+
+function FloatingElement({ skill, index }: { skill: SkillItem; index: number }) {
   const meshRef = useRef<THREE.Mesh>(null);
-  
+
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3 + index) * 0.2;
@@ -56,15 +74,6 @@ function FloatingElement({ skill, index }: { skill: any, index: number }) {
 }
 
 function Particles() {
-  const count = 300;
-  const positions = useMemo(() => {
-    const arr = new Float32Array(count * 3);
-    for (let i = 0; i < count * 3; i++) {
-      arr[i] = (Math.random() - 0.5) * 30;
-    }
-    return arr;
-  }, []);
-
   const pointsRef = useRef<THREE.Points>(null);
 
   useFrame((state) => {
@@ -76,9 +85,9 @@ function Particles() {
 
   const geo = useMemo(() => {
     const g = new THREE.BufferGeometry();
-    g.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    g.setAttribute("position", new THREE.BufferAttribute(PARTICLE_POSITIONS, 3));
     return g;
-  }, [positions]);
+  }, []);
 
   return (
     <points ref={pointsRef} geometry={geo}>

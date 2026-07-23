@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Rocket, Zap, Target, ShieldCheck } from "lucide-react";
 
@@ -67,7 +67,7 @@ export default function ProfessionalHero() {
                   className="p-3 rounded-2xl glass-panel flex flex-col items-center gap-1 border-t transition-all hover:scale-110 pointer-events-auto"
                   style={{ 
                     borderColor: `${badge.color}44`,
-                    transform: `translate(-50%, -50%) rotate(-${360}deg)` // Counter-rotate to stay upright
+                    transform: `translate(-50%, -50%) rotate(-${360}deg)`
                   }}
                 >
                   <div style={{ color: badge.color }} className="animate-pulse">{badge.icon}</div>
@@ -112,7 +112,7 @@ export default function ProfessionalHero() {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light px-4"
         >
-          "I find what others miss. <span className="text-white font-medium">Selenium · Java · TestNG</span> · 1 year of real-world QA from Coimbatore."
+          &quot;I find what others miss. <span className="text-white font-medium">Selenium · Java · TestNG</span> · 1 year of real-world QA from Coimbatore.&quot;
         </motion.p>
 
         <motion.div
