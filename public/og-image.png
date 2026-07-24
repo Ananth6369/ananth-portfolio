@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#020617"/>
+  
+  <!-- Subtle background glow -->
+  <circle cx="900" cy="150" r="300" fill="#06b6d4" opacity="0.15" filter="blur(80px)"/>
+  <circle cx="200" cy="500" r="250" fill="#3b82f6" opacity="0.12" filter="blur(80px)"/>
+
+  <!-- Border Card Overlay -->
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="#0f172a" fill-opacity="0.8" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Top Badge -->
+  <rect x="80" y="90" width="260" height="40" rx="20" fill="#06b6d4" fill-opacity="0.1" stroke="#06b6d4" stroke-opacity="0.3"/>
+  <text x="100" y="116" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#22d3ee">SDET &amp; AUTOMATION QA</text>
+
+  <!-- Main Name Title -->
+  <text x="80" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#f8fafc">Ananth A</text>
+  
+  <!-- Role Subtitle -->
+  <text x="80" y="275" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="700" fill="#38bdf8">Senior QA Automation Engineer</text>
+
+  <!-- Description -->
+  <text x="80" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="400" fill="#94a3b8">Specializing in Playwright, Selenium, API Testing, Performance Testing &amp; Test Architecture.</text>
+
+  <!-- Skill Badges -->
+  <g transform="translate(80, 390)">
+    <!-- Playwright -->
+    <rect x="0" y="0" width="150" height="44" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="75" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e2e8f0" text-anchor="middle">⚡ Playwright</text>
+
+    <!-- Selenium -->
+    <rect x="166" y="0" width="140" height="44" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="236" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e2e8f0" text-anchor="middle">🌐 Selenium</text>
+
+    <!-- API Testing -->
+    <rect x="322" y="0" width="150" height="44" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="397" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e2e8f0" text-anchor="middle">🔌 API Testing</text>
+
+    <!-- Performance -->
+    <rect x="488" y="0" width="170" height="44" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="573" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#e2e8f0" text-anchor="middle">🚀 Performance</text>
+  </g>
+
+  <!-- Footer Info / Website -->
+  <line x1="80" y1="480" x2="1120" y2="480" stroke="#1e293b" stroke-width="1"/>
+  
+  <text x="80" y="525" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#06b6d4">ananth-portfolio-xi.vercel.app</text>
+  <text x="1120" y="525" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#64748b" text-anchor="end">Engineering Portfolio &amp; Technical Blog</text>
+</svg>
