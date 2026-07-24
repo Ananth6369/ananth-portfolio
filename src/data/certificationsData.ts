@@ -1,0 +1,40 @@
+import { Certification } from "@/types/certification";
+
+export const certificationsData: Certification[] = [
+  {
+    id: "test-automation-foundations",
+    name: "Test Automation Foundations",
+    issuer: "LinkedIn Learning",
+    issueDate: "2024",
+    category: "Automation",
+    color: "bg-blue-600/10 text-blue-400 border-blue-600/20 hover:border-blue-500/40",
+    description: "Fundamentals of automated software testing, Selenium WebDriver architecture, and QA automation workflows.",
+    tags: ["Test Automation", "Selenium", "QA Architecture", "Test Strategy"],
+    pdfUrl: "/Test Automation Foundations.pdf",
+    credentialId: "LIL-AUTO-2024",
+  },
+  {
+    id: "java-full-stack",
+    name: "Java Full Stack Certification",
+    issuer: "Wipro TalentNext",
+    issueDate: "2024",
+    category: "Software Engineering",
+    color: "bg-emerald-600/10 text-emerald-400 border-emerald-600/20 hover:border-emerald-500/40",
+    description: "End-to-end enterprise Java software engineering, object-oriented programming, and web application architecture.",
+    tags: ["Java", "Full Stack Development", "OOP", "Web Architecture"],
+    pdfUrl: "/Wipro TalentNext  Java Full Stack Certification.pdf",
+    credentialId: "WIPRO-TN-JAVA-2024",
+  },
+  {
+    id: "sql-beginners",
+    name: "SQL for Beginners",
+    issuer: "Prepinsta",
+    issueDate: "2024",
+    category: "Database",
+    color: "bg-amber-600/10 text-amber-400 border-amber-600/20 hover:border-amber-500/40",
+    description: "Relational database management, complex SQL querying, joins, index optimizations, and data integrity.",
+    tags: ["SQL", "Relational Databases", "Data Querying", "Database Testing"],
+    pdfUrl: "/certificate_SQL.pdf",
+    credentialId: "PREP-SQL-2024",
+  },
+];

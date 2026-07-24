@@ -12,7 +12,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-bold mb-4"
+          className="text-3xl md:text-5xl font-bold mb-4 font-heading text-slate-50"
         >
           About Me
         </motion.h2>
@@ -37,20 +37,18 @@ export default function About() {
             <div className="w-full h-full rounded-2xl bg-slate-900 flex items-center justify-center overflow-hidden border-2 border-slate-700 relative">
               <Image
                 src="/profile-headshot.png"
-                alt="Ananth A - QA Engineer"
+                alt="Ananth A - QA Automation Engineer"
                 width={400}
                 height={600}
                 quality={95}
                 className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 priority
               />
-              {/* Fallback pattern in case image is missing */}
               <div className="absolute inset-0 flex items-center justify-center -z-10 bg-slate-800">
                 <User size={120} className="text-slate-600 group-hover:text-accent transition-colors duration-500" />
               </div>
             </div>
           </div>
-          {/* Decorative badges around avatar */}
           <div className="absolute -top-4 -right-4 p-4 bg-slate-900 border border-slate-700 rounded-2xl shadow-xl transform rotate-12 group-hover:rotate-0 transition-transform">
             <ShieldCheck size={32} className="text-accent" />
           </div>
@@ -67,25 +65,23 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="flex-1 max-w-2xl"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-slate-100 flex items-center gap-3">
+          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-slate-100 flex items-center gap-3 font-heading">
             Passionate about <span className="text-accent">Quality Assurance</span>
           </h3>
-          <p className="text-lg text-slate-400 leading-relaxed mb-8">
-            QA Engineer with 1 year of experience in manual and automation 
-            testing across ERP, CRM, e-commerce, and mobile applications. Skilled in 
-            Selenium (Java), TestNG, and Page Object Model with hands-on experience 
-            building end-to-end automation frameworks.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-6">
+            QA Software Tester with 1.5+ years of experience in manual and automation 
+            testing across ERP, CRM, web, and mobile applications. Skilled in 
+            Selenium WebDriver (Java), Playwright, TestNG, and Page Object Model (POM) with hands-on experience 
+            building end-to-end automation frameworks and Jenkins CI/CD pipelines.
           </p>
-          <p className="text-lg text-slate-400 leading-relaxed mb-10">
-            I am passionate about delivering scalable, reliable, and high-quality 
-            testing solutions that streamline development cycles and enhance user 
-            experiences.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+            Seeking opportunities as a QA Engineer, Automation QA Engineer, or Software Test Engineer to contribute to quality engineering, test automation, and continuous delivery initiatives.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: ShieldCheck, label: "Reliable Testing", desc: "Building robust frameworks" },
-              { icon: Zap, label: "Fast Integration", desc: "Automated CI/CD pipelines" },
+              { icon: ShieldCheck, label: "Reliable Testing", desc: "Building robust POM frameworks" },
+              { icon: Zap, label: "Fast Integration", desc: "Automated Jenkins CI/CD pipelines" },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -93,8 +89,8 @@ export default function About() {
               >
                 <item.icon size={28} className="text-accent shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold text-slate-200">{item.label}</h4>
-                  <p className="text-sm text-slate-500">{item.desc}</p>
+                  <h4 className="font-bold text-slate-200 font-heading">{item.label}</h4>
+                  <p className="text-sm text-slate-400">{item.desc}</p>
                 </div>
               </div>
             ))}
